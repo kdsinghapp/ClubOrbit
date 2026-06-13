@@ -1,0 +1,5 @@
+/api/*  https://uat.cluborbit.com/playerserver/api/:splat  200
+/maps/autocomplete  https://maps.googleapis.com/maps/api/place/autocomplete/json  200
+/maps/details  https://maps.googleapis.com/maps/api/place/details/json  200
+/maps/photo  https://maps.googleapis.com/maps/api/place/photo  200
+/*    /index.html   200

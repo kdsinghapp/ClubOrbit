@@ -1,0 +1,43 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# Backend API proxy
+[[redirects]]
+  from = "/api/*"
+  to = "https://uat.cluborbit.com/playerserver/api/:splat"
+  status = 200
+  force = true
+  [redirects.headers]
+    X-Forwarded-Host = "uat.cluborbit.com"
+
+# Google Places Autocomplete proxy
+[[redirects]]
+  from = "/maps/autocomplete"
+  to = "https://maps.googleapis.com/maps/api/place/autocomplete/json"
+  status = 200
+  force = true
+  [redirects.headers]
+    X-Forwarded-Host = "maps.googleapis.com"
+
+# Google Places Details proxy
+[[redirects]]
+  from = "/maps/details"
+  to = "https://maps.googleapis.com/maps/api/place/details/json"
+  status = 200
+  force = true
+  [redirects.headers]
+    X-Forwarded-Host = "maps.googleapis.com"
+
+# Google Places Photo proxy
+[[redirects]]
+  from = "/maps/photo"
+  to = "https://maps.googleapis.com/maps/api/place/photo"
+  status = 200
+  force = true
+
+# SPA fallback - React Router ke liye
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
