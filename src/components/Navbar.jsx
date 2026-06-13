@@ -19,7 +19,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const profileRef = useRef(null);
 
-  /* ── scroll detection for navbar shadow ── */
+  /* ── scroll detection for navbar shadows ── */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });
